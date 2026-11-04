@@ -235,7 +235,7 @@ Variables: `customer_name`, `passkey_name` ("Unnamed passkey" when empty), `stor
 
 ## Translations
 
-All strings are in `i18n/en_US.csv`. Translate them with a language pack or your theme's `i18n` CSV, as for any module.
+All strings are in `i18n/en_US.csv`, and the module ships a Romanian translation in `i18n/ro_RO.csv`. Translate them into other languages with a language pack or your theme's `i18n` CSV, as for any module.
 
 Luma scripts use `mage/translate`. Hyvä doesn't load it, and `passkey-core.js` is shared by both themes, so `i18n.phtml` renders translations with `__()` into a JSON block, `<script type="application/json" id="mageos-passkey-i18n">`, on every storefront page. The scripts read it through `passkeyCore.t()`. Only phrases whose translation differs from the English text are included, and the block is left out when there are none. Without the block, or for a phrase not in it, `passkeyCore.t()` returns the English text. A browser never runs a JSON block, so it needs no CSP nonce.
 
